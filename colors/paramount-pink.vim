@@ -29,22 +29,22 @@ let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" }
 let s:light_gray      = { "gui": "#A8A8A8", "cterm": "248" }
 let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" }
 let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" }
-let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
+let s:dark_pink       = { "gui": "#d787af", "cterm": "175" }
+let s:light_pink      = { "gui": "#d75f87", "cterm": "168" }
 let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
 let s:light_red       = { "gui": "#E32791", "cterm": "1"   }
 let s:orange          = { "gui": "#D75F5F", "cterm": "167" }
 let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
-let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"   }
+let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"  }
 let s:blue            = { "gui": "#20BBFC", "cterm": "12"  }
 let s:light_blue      = { "gui": "#b6d6fd", "cterm": "153" }
 let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
 let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
 let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
 let s:light_green     = { "gui": "#5FD7A7", "cterm": "10"  }
-let s:dark_purple     = { "gui": "#af5fd7", "cterm": "134" }
 let s:light_purple    = { "gui": "#a790d5", "cterm": "140" }
 let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
-let s:light_yellow    = { "gui": "#ffff87", "cterm": "228"   }
+let s:light_yellow    = { "gui": "#ffff87", "cterm": "228" }
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
 
 let s:background = &background
@@ -55,11 +55,11 @@ if &background == "dark"
   let s:bg_very_subtle  = s:subtle_black
   let s:norm            = s:lighter_gray
   let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:light_purple
+  let s:pink            = s:light_pink
   let s:cyan            = s:light_cyan
   let s:green           = s:light_green
   let s:red             = s:light_red
-  let s:visual          = s:light_purple
+  let s:visual          = s:light_pink
   let s:yellow          = s:light_yellow
 else
   let s:bg              = s:actual_white
@@ -67,11 +67,11 @@ else
   let s:bg_very_subtle  = s:lightest_gray
   let s:norm            = s:light_black
   let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:dark_purple
+  let s:pink            = s:dark_pink
   let s:cyan            = s:dark_cyan
   let s:green           = s:dark_green
   let s:red             = s:dark_red
-  let s:visual          = s:dark_purple
+  let s:visual          = s:dark_pink
   let s:yellow          = s:dark_yellow
 endif
 
@@ -94,10 +94,10 @@ if &background != s:background
    execute "set background=" . s:background
 endif
 
-call s:h("Cursor",        {"bg": s:purple, "fg": s:norm })
+call s:h("Cursor",        {"bg": s:pink, "fg": s:norm })
 call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
 
-call s:h("Constant",      {"fg": s:purple})
+call s:h("Constant",      {"fg": s:pink})
 hi! link Character        Constant
 hi! link Number           Constant
 hi! link Boolean          Constant
@@ -138,7 +138,7 @@ hi! link Debug            Special
 call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
 call s:h("Ignore",        {"fg": s:bg})
 call s:h("Error",         {"fg": s:actual_white, "bg": s:red, "cterm": "bold"})
-call s:h("Todo",          {"fg": s:purple, "gui": "underline", "cterm": "underline"})
+call s:h("Todo",          {"fg": s:pink, "gui": "underline", "cterm": "underline"})
 call s:h("SpecialKey",    {"fg": s:light_green})
 call s:h("NonText",       {"fg": s:medium_gray})
 call s:h("Directory",     {"fg": s:dark_blue})
@@ -148,7 +148,7 @@ call s:h("Search",        {"bg": s:light_green, "fg": s:light_black})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:bg_subtle})
-call s:h("CursorLineNr",  {"fg": s:purple, "bg": s:bg_very_subtle})
+call s:h("CursorLineNr",  {"fg": s:pink, "bg": s:bg_very_subtle})
 call s:h("Question",      {"fg": s:red})
 call s:h("StatusLine",    {"bg": s:bg_very_subtle})
 call s:h("StatusLineNC",  {"bg": s:bg_very_subtle, "fg": s:medium_gray})
@@ -170,21 +170,21 @@ call s:h("SignColumn",    {"fg": s:light_green})
 if has("gui_running")
   call s:h("SpellBad",    {"gui": "underline", "sp": s:red})
   call s:h("SpellCap",    {"gui": "underline", "sp": s:light_green})
-  call s:h("SpellRare",   {"gui": "underline", "sp": s:pink})
+  call s:h("SpellRare",   {"gui": "underline", "sp": s:light_purple})
   call s:h("SpellLocal",  {"gui": "underline", "sp": s:dark_green})
 else
   call s:h("SpellBad",    {"cterm": "underline", "fg": s:red})
   call s:h("SpellCap",    {"cterm": "underline", "fg": s:light_green})
-  call s:h("SpellRare",   {"cterm": "underline", "fg": s:pink})
+  call s:h("SpellRare",   {"cterm": "underline", "fg": s:light_purple})
   call s:h("SpellLocal",  {"cterm": "underline", "fg": s:dark_green})
 endif
 
 call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_subtle})
-call s:h("PmenuSel",      {"fg": s:norm, "bg": s:purple})
+call s:h("PmenuSel",      {"fg": s:norm, "bg": s:pink})
 call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_very_subtle})
-call s:h("TabLineSel",    {"fg": s:purple, "bg": s:bg_subtle, "gui": "bold", "cterm": "bold"})
+call s:h("TabLineSel",    {"fg": s:pink, "bg": s:bg_subtle, "gui": "bold", "cterm": "bold"})
 call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_very_subtle})
 call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"bg": s:bg_very_subtle})
