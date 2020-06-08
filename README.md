@@ -1,19 +1,15 @@
-# Paramount
+# Sunbather
 
-A minimal colorscheme for Vim that only puts emphasis on the paramount.
+A minimal pink colorscheme for Vim.
 
 ## Screenshots
 
-*Fira Code* font on light and dark backgrounds, with Ruby code from
-[VimColors](vimcolors.com/438/paramount/dark):
-
-![](screenshots/light.png)
-![](screenshots/dark.png)
+*TODO*
 
 ## Installation
 
 Copy the color scheme file to your `~/.vim/colors` directory, or use a plugin
-manager like [Plug][] or [Vundle][] and add `"owickstrom/vim-colors-paramount"`
+manager like [Plug][] or [Vundle][] and add `"nikolvs/vim-sunbather"`
 as a plugin.
 
 [vundle]: https://github.com/gmarik/Vundle.vim
@@ -22,15 +18,17 @@ as a plugin.
 ## Usage
 
 ```
-:colorscheme paramount
+:colorscheme sunbather
 ```
 
 Supports both `background=light` and `background=dark`.
 
 ## Credits
 
+Forked from [paramount][].
 Based on the [pencil][] and [off][] colorschemes.
 
+[paramount]: https://github.com/owickstrom/vim-colors-paramount
 [pencil]: https://github.com/reedes/vim-colors-pencil
 [off]: https://github.com/reedes/vim-colors-off
 
