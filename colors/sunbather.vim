@@ -1,14 +1,12 @@
-" Name:       paramount.vim
+" Name:       sunbather.vim
 " Version:    0.1.0
-" Maintainer: github.com/owickstrom
+" Maintainer: github.com/nikolvs
 " License:    The MIT License (MIT)
 "
-" A minimal colorscheme for Vim that only puts emphasis on the paramount.
+" A minimal pink colorscheme for Vim.
 "
-" Based on the pencil and off colorschemes:
-"
-" https://github.com/reedes/vim-colors-pencil
-" https://github.com/reedes/vim-colors-off
+" Forked from paramount:
+" https://github.com/owickstrom/vim-colors-paramount
 "
 """
 hi clear
