@@ -23,13 +23,13 @@ let s:black           = { "gui": "#000000", "cterm": "232" }
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
 let s:white           = { "gui": "#F1F1F1", "cterm": "15"  }
 let s:actual_white    = { "gui": "#FFFFFF", "cterm": "231" }
-let s:subtle_black    = { "gui": "#303030", "cterm": "236" }
+let s:subtle_black    = { "gui": "#121212", "cterm": "233" }
 let s:light_black     = { "gui": "#262626", "cterm": "235" }
 let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" }
 let s:light_gray      = { "gui": "#A8A8A8", "cterm": "248" }
 let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" }
 let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" }
-let s:dark_pink       = { "gui": "#d787af", "cterm": "175" }
+let s:dark_pink       = { "gui": "#ff5f87", "cterm": "204" }
 let s:light_pink      = { "gui": "#d75f87", "cterm": "168" }
 let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
 let s:light_red       = { "gui": "#E32791", "cterm": "1"   }
@@ -179,12 +179,12 @@ else
   call s:h("SpellLocal",  {"cterm": "underline", "fg": s:dark_green})
 endif
 
-call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_subtle})
-call s:h("PmenuSel",      {"fg": s:norm, "bg": s:pink})
+call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_very_subtle})
+call s:h("PmenuSel",      {"fg": s:subtle_black, "bg": s:pink})
 call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_very_subtle})
-call s:h("TabLineSel",    {"fg": s:pink, "bg": s:bg_subtle, "gui": "bold", "cterm": "bold"})
+call s:h("TabLineSel",    {"fg": s:subtle_black, "bg": s:pink, "gui": "bold", "cterm": "bold"})
 call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_very_subtle})
 call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"bg": s:bg_very_subtle})
@@ -200,7 +200,7 @@ call s:h("htmlH4",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
 
-" Synatastic
+" Syntastic
 call s:h("SyntasticWarningSign",    {"fg": s:yellow})
 call s:h("SyntasticWarning",        {"bg": s:yellow, "fg": s:black, "gui": "bold", "cterm": "bold"})
 call s:h("SyntasticErrorSign",      {"fg": s:red})
